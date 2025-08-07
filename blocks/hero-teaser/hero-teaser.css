@@ -178,11 +178,35 @@
   border-radius: 0;
   text-decoration: none;
   background: none;
+  padding: 0;
 }
 
 /* News variant - Reset button pseudo-element */
 .hero-teaser.news>div>div:nth-child(2)>p:last-child::after {
   display: none;
+}
+
+/* News variant - Anchor links styling */
+.hero-teaser.news .news-anchor-links {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.hero-teaser.news .news-anchor-link {
+  color: white;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.hero-teaser.news .news-anchor-link:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.hero-teaser.news .news-link-separator {
+  color: white;
+  font-size: 14px;
 }
 
 /* News variant - Third div positioning for image */
