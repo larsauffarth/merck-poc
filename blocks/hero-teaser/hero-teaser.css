@@ -1,3 +1,11 @@
+/* ==========================================================================
+   HERO TEASER COMPONENT
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Container & Base Layout
+   -------------------------------------------------------------------------- */
+
 .hero-teaser-container .hero-teaser-wrapper {
   max-width: unset;
   padding: 0;
@@ -11,6 +19,16 @@
   padding: 0 24px;
 }
 
+/* Main flexbox container for the three columns */
+.hero-teaser > div {
+  display: flex;
+  flex-direction: row;
+}
+
+/* --------------------------------------------------------------------------
+   Green Variant (Special styling for green theme)
+   -------------------------------------------------------------------------- */
+
 .hero-teaser.green {
   clear: none !important;
   background-color: #94b848;
@@ -23,30 +41,36 @@
   border-bottom-left-radius: 30px 30px;
 }
 
+/* Remove background from first two columns in green variant */
 .hero-teaser.green > div > div:not(:last-child) {
   background: none;
 }
 
-.hero-teaser.green > div > div:last-child > img {
+/* Green variant - Last child image positioning */
+.hero-teaser.green > div > div:last-child img {
   background: none;
   width: 42%;
   position: absolute;
   top: -18%;
-  right: -4%;
+  right: -10%;
   padding: 0;
 }
 
-.hero-teaser.green>div>div:nth-child(2)>h2>a {
+/* Green variant - Second column heading styles */
+.hero-teaser.green > div > div:nth-child(2) > h2 > a {
   color: white;
   font-family: "merck";
   font-size: 30px;
   line-height: 130%;
 }
-.hero-teaser.green>div>div:nth-child(2)>p {
+
+/* Green variant - Second column text */
+.hero-teaser.green > div > div:nth-child(2) > p {
   color: white;
 }
 
-.hero-teaser.green>div>div:nth-child(2)>p:last-child {
+/* Green variant - Call-to-action button */
+.hero-teaser.green > div > div:nth-child(2) > p:last-child {
   box-sizing: border-box;
   margin: 10px 0 0 0;
   line-height: 1.5;
@@ -62,7 +86,9 @@
   text-decoration: none;
   background: #ffffff;
 }
-.hero-teaser.green>div>div:nth-child(2)>p:last-child::after {
+
+/* Green variant - Button skewed edge effect */
+.hero-teaser.green > div > div:nth-child(2) > p:last-child::after {
   content: "";
   position: absolute;
   width: 18px;
@@ -73,7 +99,9 @@
   transform: skewX(-10deg);
   border-radius: 0 8px 8px 0;
 }
-.hero-teaser.green>div>div:nth-child(2)>p:last-child>a {
+
+/* Green variant - Button link styling */
+.hero-teaser.green > div > div:nth-child(2) > p:last-child > a {
   color: #0f69af;
   font-family: Verdana, sans-serif;
   font-weight: bold;
@@ -81,42 +109,50 @@
   text-decoration: none;
 }
 
-.hero-teaser>div {
-  display: flex;
-  flex-direction: row;
-}
+/* --------------------------------------------------------------------------
+   First Column - Image Section (37.5% width including padding)
+   -------------------------------------------------------------------------- */
 
-
-.hero-teaser>div>div:nth-child(1) {
+.hero-teaser > div > div:nth-child(1) {
   flex: 0 0 37.5%;
   padding: 15px 15px 15px 20px;
   background: #f7f7f7;
+  box-sizing: border-box;
 }
 
-.hero-teaser>div>div:nth-child(1) img {
+/* Responsive image styling */
+.hero-teaser > div > div:nth-child(1) img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.hero-teaser>div>div:nth-child(2) {
+/* --------------------------------------------------------------------------
+   Second Column - Content Section (37.5% width including padding)
+   -------------------------------------------------------------------------- */
+
+.hero-teaser > div > div:nth-child(2) {
   flex: 0 0 37.5%;
   padding: 15px 15px 15px 20px;
   background: #f7f7f7;
+  box-sizing: border-box;
 }
 
-.hero-teaser>div>div:nth-child(2)>h2 {
+/* Main heading */
+.hero-teaser > div > div:nth-child(2) > h2 {
   margin-top: 0;
 }
 
-.hero-teaser>div>div:nth-child(2)>h2>a {
+/* Heading link styling */
+.hero-teaser > div > div:nth-child(2) > h2 > a {
   color: #0f69af;
   font-family: Verdana, sans-serif;
   font-weight: bold;
   font-size: 20px;
 }
 
-.hero-teaser>div>div:nth-child(2)>p:last-child {
+/* Call-to-action button (default theme) */
+.hero-teaser > div > div:nth-child(2) > p:last-child {
   box-sizing: border-box;
   margin: 10px 0 0 0;
   line-height: 1.5;
@@ -133,11 +169,13 @@
   background: #0f69af;
 }
 
-.hero-teaser>div>div:nth-child(2)>p:last-child>a {
+/* Button link text color */
+.hero-teaser > div > div:nth-child(2) > p:last-child > a {
   color: #ffffff;
 }
 
-.hero-teaser>div>div:nth-child(2)>p:last-child::after {
+/* Button skewed edge effect */
+.hero-teaser > div > div:nth-child(2) > p:last-child::after {
   content: "";
   position: absolute;
   width: 18px;
@@ -149,49 +187,59 @@
   border-radius: 0 8px 8px 0;
 }
 
-.hero-teaser>div>div:nth-child(3) {
+/* --------------------------------------------------------------------------
+   Third Column - Navigation Cards (25% width including padding)
+   Three equal-height sections with h3+p pairs
+   -------------------------------------------------------------------------- */
+
+.hero-teaser > div > div:nth-child(3) {
   flex: 0 0 25%;
   padding-left: 25px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
-.hero-teaser>div>div:nth-child(3)>h3 {
+/* Base styling for all h3 elements in third column */
+.hero-teaser > div > div:nth-child(3) > h3 {
   padding: 15px 10px 0 10px;
 }
 
-.hero-teaser>div>div:nth-child(3)>p {
+/* Base styling for all p elements in third column */
+.hero-teaser > div > div:nth-child(3) > p {
   padding: 0px 10px 15px 10px;
   color: #ffffff;
 }
 
-.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(1),
-.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(1)+p {
+/* First section (h3 + p pair) - Blue theme */
+.hero-teaser > div > div:nth-child(3) > h3:nth-of-type(1),
+.hero-teaser > div > div:nth-child(3) > h3:nth-of-type(1) + p {
   background-color: #0f69af;
   margin: 0;
   flex: 1;
 }
 
-.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(2),
-.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(2)+p,
-.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(3),
-.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(3)+p {
+/* Second and third sections (h3 + p pairs) - Green theme */
+.hero-teaser > div > div:nth-child(3) > h3:nth-of-type(2),
+.hero-teaser > div > div:nth-child(3) > h3:nth-of-type(2) + p,
+.hero-teaser > div > div:nth-child(3) > h3:nth-of-type(3),
+.hero-teaser > div > div:nth-child(3) > h3:nth-of-type(3) + p {
   background-color: #a5cd50;
   margin: 0;
-  /* padding: 15px 10px 0 10px; */
   flex: 1;
 }
 
+/* Spacing between sections (applied to 2nd and 3rd h3 headers) */
+.hero-teaser > div > div:nth-child(3) > h3:nth-of-type(2),
+.hero-teaser > div > div:nth-child(3) > h3:nth-of-type(3) {
+  margin-top: 15px;
+}
 
-.hero-teaser>div>div>h3>a {
+/* Link styling for h3 titles */
+.hero-teaser > div > div > h3 > a {
   color: #ffffff;
   font-size: 25px;
   font-family: verdana, sans-serif;
   font-weight: 500;
   text-decoration: none;
-}
-
-.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(2),
-.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(3) {
-  margin-top: 15px;
 }
