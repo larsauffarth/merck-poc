@@ -73,7 +73,8 @@
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
+  background-color: #ffffff;
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
@@ -166,7 +167,7 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link,
+/* a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
@@ -208,7 +209,7 @@ button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
-}
+} */
 
 main img {
   max-width: 100%;
@@ -251,7 +252,7 @@ main > .section:first-of-type {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: var(--light-color);
+  /* background-color: var(--light-color); */
   margin: 0;
   padding: 40px 0;
 }
