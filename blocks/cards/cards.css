@@ -1,27 +1,75 @@
 .cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
+    grid-gap: 24px;
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+    background-color: var(--background-color);
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+    margin: 16px;
 }
 
 .cards .cards-card-image {
-  line-height: 0;
+    line-height: 0;
 }
 
 .cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.video-container {
+    line-height: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.cards .video-container video {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* Video cards specific styling */
+.cards.video > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    background-color: var(--background-color);
+}
+
+.cards.video > ul > li {
+    flex: 1 1 100%;
+}
+
+.cards.video .cards-card-body {
+    margin: 16px;
+    text-align: center;
+    color: #503291;
+    font-size: 1.2rem;
+}
+
+.cards-wrapper,
+.hero-wrapper {
+    padding: 0 !important;
+}
+
+/* Desktop: 3 items per row */
+@media (min-width: 768px) {
+
+    main > .section > div:has(.cards-wrapper),
+    main > .section > div:has(.hero-wrapper) {
+        padding: 0 32px !important;
+    }
+
+    .cards.video > ul > li {
+        flex: 1 1 calc(33.333% - 3.333px);
+    }
 }

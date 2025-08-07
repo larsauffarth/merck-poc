@@ -1,0 +1,12 @@
+.site-aaa .hero {
+    background-color: #667eea;
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.site-aaa .hero h1 {
+    font-weight: 300;
+    margin-bottom: 1rem;
+}

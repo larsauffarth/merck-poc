@@ -1,0 +1,12 @@
+.site-bbb .hero {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 2rem;
+    text-align: left;
+    border-left: 4px solid #ff6b35;
+}
+
+.site-bbb .hero h1 {
+    color: #ff6b35;
+    font-weight: 700;
+}

@@ -1,0 +1,54 @@
+.hero {
+    padding-top: 1rem;
+}
+
+.hero h1 {
+    margin-top: 0.2rem;
+    color: var(--text-color);
+}
+
+.hero [aria-role="doc-subtitle"] {
+    font-size: var(--body-font-size-s);
+}
+
+.hero p {
+    font-weight: bold;
+}
+
+.hero p:last-child {
+    font-size: var(--body-font-size-xs);
+    font-weight: lighter;
+}
+
+.hero.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #503291;
+    width: 100%;
+    padding: var(--body-font-size-xs);
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.hero.video .video-container {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Ensure the button is positioned relative to the container */
+}
+
+.hero.video video {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+}
+
+.hero.video .text {
+    color: #e1c3cd;
+    height: fit-content;
+    text-align: center;
+    justify-content: center;
+    font-size: var(--heading-font-size-m);
+}

@@ -1,0 +1,81 @@
+/* Sidebar Helper Container */
+.page-container {
+    display: flex;
+    min-height: 100vh;
+    gap: 0;
+}
+
+.page-container main {
+    flex: 1;
+    min-width: 0;
+}
+
+.page-container main > div {
+    margin: 40px 0;
+}
+
+.page-container main > .section > div {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* Sidebar styling */
+.sidebar {
+    max-width: 300px;
+    height: fit-content;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    overflow-y: auto;
+    flex-shrink: 0; /* Prevents sidebar from shrinking */
+}
+
+.sidebar .default-content-wrapper {
+    margin: 0;
+}
+
+.sidebar h3 {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+}
+
+.sidebar h3:first-of-type {
+    margin-top: 0;
+}
+
+.sidebar code {
+    color: red;
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #e9ecef;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        order: 2; /* Places sidebar after main content on mobile */
+    }
+
+    /* Ensure full width on mobile */
+    .page-container main {
+        width: 100%;
+        margin: 0;
+    }
+
+    .page-container main > div {
+        margin: 20px 0;
+    }
+
+    .page-container main > .section > div {
+        padding-left: 16px;
+        padding-right: 16px;
+        max-width: none;
+    }
+}
