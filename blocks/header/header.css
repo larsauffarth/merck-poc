@@ -139,14 +139,43 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 header .nav-brand {
   grid-area: brand;
   flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+  --tool-size: 680px;
+  --diac-clr-primary: #104e70;
+  --diac-clr-secondary: #156089;
+  --diac-clr-tertiary: #b84700;
+  --diac-clr-neutral-primary: #FFFFFF;
+  --diac-clr-neutral-secondary: #D1E4F3;
+  --diac-clr-focus: #FFD700;
+  --diac-clr-highlight: #0096FFD9;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000000;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background: #a5cd50;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  height: 72px;
+  border-bottom-right-radius: 13em 13em;
 }
 
 header nav .nav-brand img {
   width: 128px;
   height: auto;
+}
+
+header nav .nav-brand .merck-logo {
+  width: 120px;
+  height: auto;
+  max-height: 40px;
+  object-fit: contain;
 }
 
 /* sections */

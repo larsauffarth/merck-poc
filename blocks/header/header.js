@@ -130,6 +130,16 @@ export default async function decorate(block) {
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
+    
+    // Add Merck logo to brand link
+    const logoImg = document.createElement('img');
+    logoImg.src = '/icons/MERCK_LOGO_Magenta.png';
+    logoImg.alt = 'Merck Logo';
+    logoImg.className = 'merck-logo';
+    
+    // Clear existing content and add logo
+    brandLink.innerHTML = '';
+    brandLink.appendChild(logoImg);
   }
 
   const navSections = nav.querySelector('.nav-sections');

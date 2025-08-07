@@ -1,0 +1,127 @@
+.hero-teaser-container .hero-teaser-wrapper {
+  max-width: unset;
+  padding: 0;
+  margin-bottom: 80px;
+}
+
+.hero-teaser {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+.hero-teaser>div {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.hero-teaser>div>div:nth-child(1) {
+  flex: 0 0 37.5%;
+  padding: 15px 15px 15px 20px;
+  background: #f7f7f7;
+}
+
+.hero-teaser>div>div:nth-child(1) img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-teaser>div>div:nth-child(2) {
+  flex: 0 0 37.5%;
+  padding: 15px 15px 15px 20px;
+  background: #f7f7f7;
+}
+
+.hero-teaser>div>div:nth-child(2)>h2 {
+  margin-top: 0;
+}
+
+.hero-teaser>div>div:nth-child(2)>h2>a {
+  color: #0f69af;
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.hero-teaser>div>div:nth-child(2)>p:last-child {
+  box-sizing: border-box;
+  margin: 0;
+  line-height: 1.5;
+  width: auto;
+  text-align: center;
+  display: inline-block;
+  font-family: Verdana, sans-serif;
+  min-height: 41px;
+  font-size: 18px;
+  position: relative;
+  padding: 7px 15px;
+  border-radius: 8px 0px 8px 8px;
+  text-decoration: none;
+  background: #0f69af;
+}
+
+.hero-teaser>div>div:nth-child(2)>p:last-child>a {
+  color: #ffffff;
+}
+
+.hero-teaser>div>div:nth-child(2)>p:last-child::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  background: #0f69af;
+  min-height: 100%;
+  top: 0;
+  right: -6px;
+  transform: skewX(-10deg);
+  border-radius: 0 8px 8px 0;
+}
+
+.hero-teaser>div>div:nth-child(3) {
+  flex: 0 0 25%;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-teaser>div>div:nth-child(3)>h3 {
+  padding: 15px 10px 0 10px;
+}
+
+.hero-teaser>div>div:nth-child(3)>p {
+  padding: 0px 10px 15px 10px;
+  color: #ffffff;
+}
+
+.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(1),
+.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(1)+p {
+  background-color: #0f69af;
+  margin: 0;
+  flex: 1;
+}
+
+.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(2),
+.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(2)+p,
+.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(3),
+.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(3)+p {
+  background-color: #a5cd50;
+  margin: 0;
+  /* padding: 15px 10px 0 10px; */
+  flex: 1;
+}
+
+
+.hero-teaser>div>div>h3>a {
+  color: #ffffff;
+  font-size: 25px;
+  font-family: verdana, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(2),
+.hero-teaser>div>div:nth-child(3)>h3:nth-of-type(3) {
+  margin-top: 15px;
+}
