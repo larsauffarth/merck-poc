@@ -113,6 +113,12 @@ export default async function decorate(block) {
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
+  // Get theme metadata and apply theme class to header
+  const theme = getMetadata('theme');
+  if (theme !== 'green') {
+    block.classList.add('header-purple-theme');
+  }
+
   // decorate nav DOM
   block.textContent = '';
   const nav = document.createElement('nav');
@@ -130,13 +136,16 @@ export default async function decorate(block) {
   if (brandLink) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
-    
-    // Add Merck logo to brand link
+
+    // Add Merck logo to brand link, switch by theme
     const logoImg = document.createElement('img');
-    logoImg.src = '/icons/MERCK_LOGO_Magenta.png';
+    const theme = getMetadata('theme');
+    logoImg.src = theme && theme === 'green'
+      ? '/icons/MERCK_LOGO_Magenta.png' :
+      '/icons/MDG_Logo_VCyan_RGB.png';
     logoImg.alt = 'Merck Logo';
     logoImg.className = 'merck-logo';
-    
+
     // Clear existing content and add logo
     brandLink.innerHTML = '';
     brandLink.appendChild(logoImg);

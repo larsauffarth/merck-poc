@@ -2,7 +2,7 @@
 header .nav-wrapper {
   /* background-color: var(--background-color); */
   width: 100%;
-  z-index: 2;
+  z-index: 20;
   position: fixed;
 }
 
@@ -33,8 +33,10 @@ header nav[aria-expanded='true'] {
     display: flex;
     justify-content: space-between;
     gap: 0 32px;
-    max-width: 1264px;
-    padding: 0;
+    max-width: 1280px; /* 1216 + 32 + 32 to align with body */
+    padding: 0 32px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
   header nav[aria-expanded='true'] {
@@ -306,8 +308,19 @@ header nav .nav-tools {
 
 @media (width >=900px) {
   .header nav {
+    justify-content: space-between;
+    gap: 0;
+  }
+}
+
+/* Desktop: keep a 12px gap only between brand and sections on green header */
+@media (width >=900px) {
+  .header:not(.header-purple-theme) nav {
     justify-content: flex-start;
-    gap: 12px;
+  }
+
+  .header:not(.header-purple-theme) .section.nav-brand {
+    margin-right: 12px;
   }
 }
 
@@ -362,4 +375,102 @@ header nav .nav-tools {
   color: #2dbecd;
   text-decoration: none;
   background-color: #104e70;
+}
+
+/* ==========================================================================
+   PURPLE THEME HEADER
+   ========================================================================== */
+
+.header-purple-theme .section.nav-brand {
+  background: #503291; /* Purple background */
+}
+
+.header-purple-theme .section.nav-sections {
+  background-color: #503291; /* Purple background */
+}
+
+.header-purple-theme .section.nav-sections ul {
+  background-color: #503291;
+}
+
+.header-purple-theme .section.nav-sections li {
+  background-color: #503291;
+}
+
+/* Dropdown/submenu styling for purple theme */
+.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li[aria-expanded='true']>ul {
+  background-color: #503291 !important;
+}
+
+.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li>ul::before {
+  border-bottom-color: #503291 !important;
+}
+
+.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li>ul>li {
+  background-color: #503291;
+}
+
+.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li>ul>li:hover,
+.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li>ul>li:hover a {
+  color: #2dbecd;
+  text-decoration: none;
+  background-color: #4c1d95; /* Darker purple for hover */
+}
+
+/* Remove border-radius and gaps for purple theme */
+.header-purple-theme .nav-brand {
+  border-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.header-purple-theme .section.nav-sections {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.header.header-purple-theme nav {
+  gap: 0;
+}
+
+@media (width >=900px) {
+  .header.header-purple-theme nav {
+    gap: 0;
+    justify-content: flex-start;
+    /* Align header content with body: 32px + 1216px + 32px */
+    max-width: 1280px;
+    padding: 0 32px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .header.header-purple-theme .nav-sections {
+    flex-grow: 1;
+  }
+
+  .header.header-purple-theme .section.nav-sections {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* Purple theme: brand takes 15% and aligns left */
+  .header.header-purple-theme .section.nav-brand {
+    flex: 0 0 15%;
+    justify-content: flex-start;
+    text-align: left;
+    height: var(--nav-height);
+  }
+
+  /* Purple theme: normalize section heights and remove extra padding that increases total height */
+  .header.header-purple-theme .section.nav-sections {
+    height: var(--nav-height);
+    padding: 0 16px; /* remove vertical padding; keep small horizontal breathing room */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Make purple header background span full width */
+.header.header-purple-theme .nav-wrapper {
+  background-color: #503291;
 }

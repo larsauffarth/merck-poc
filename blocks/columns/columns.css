@@ -91,3 +91,11 @@
     object-fit: contain;
   }
 }
+
+/* Uniform icon sizing when an h2 is followed by an icon in first column */
+.columns.news > div > div:first-child h2 + p img {
+  width: 30x;
+  height: 30px;
+  object-fit: contain;
+  margin-top: 20px;
+}

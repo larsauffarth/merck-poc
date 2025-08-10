@@ -2,7 +2,14 @@
 .page-container {
     display: flex;
     min-height: 100vh;
-    gap: 0;
+    /* Constrain to site content width and center */
+    max-width: 1280px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* Align items to content height and add space between content and sidebar */
+    align-items: flex-start;
+    column-gap: 32px;
 }
 
 .page-container main {
@@ -15,12 +22,14 @@
 }
 
 .page-container main > .section > div {
-    padding-left: 16px;
-    padding-right: 16px;
+    /* Match site section inner padding */
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 /* Sidebar styling */
 .sidebar {
+    width: 300px;
     max-width: 300px;
     height: fit-content;
     background-color: #f8f9fa;

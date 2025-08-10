@@ -3,6 +3,11 @@
  * @param {Element} block The hero-teaser block element
  */
 export default function decorate(block) {
+  // Remove default button styling within hero-teaser
+  block.querySelectorAll('a.button').forEach((a) => {
+    a.classList.remove('button');
+  });
+
   // Check if this is a news variant
   if (block.classList.contains('news')) {
     // Find the second div (content column)

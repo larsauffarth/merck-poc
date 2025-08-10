@@ -7,12 +7,34 @@
   grid-gap: 24px;
 }
 
+/* Layout overrides for 1, 2, 3 items */
+.dynamic-news.layout-1 > ul {
+  grid-template-columns: 1fr;
+}
+
+.dynamic-news.layout-2 > ul {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dynamic-news.layout-3 > ul {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .dynamic-news > ul > li {
   border: 1px solid #dadada;
   background-color: var(--background-color);
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
+}
+
+/* Horizontal card layout for 1–3 items */
+.dynamic-news.layout-1 > ul > li,
+.dynamic-news.layout-2 > ul > li,
+.dynamic-news.layout-3 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 .dynamic-news > ul > li:hover {
@@ -27,9 +49,30 @@
   line-height: 0;
 }
 
+/* Image container sizing for horizontal cards */
+.dynamic-news.layout-1 .dynamic-news-card-image,
+.dynamic-news.layout-2 .dynamic-news-card-image,
+.dynamic-news.layout-3 .dynamic-news-card-image {
+  flex: 0 0 40%;
+  display: flex;
+}
+
 .dynamic-news > ul > li img {
   width: 100%;
   aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Ensure images fill the vertical space in horizontal cards */
+.dynamic-news.layout-1 .dynamic-news-card-image picture,
+.dynamic-news.layout-1 .dynamic-news-card-image img,
+.dynamic-news.layout-2 .dynamic-news-card-image picture,
+.dynamic-news.layout-2 .dynamic-news-card-image img,
+.dynamic-news.layout-3 .dynamic-news-card-image picture,
+.dynamic-news.layout-3 .dynamic-news-card-image img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
   object-fit: cover;
 }
 
