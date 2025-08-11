@@ -2,7 +2,11 @@
  * Decorates the hero-teaser block
  * @param {Element} block The hero-teaser block element
  */
+import { decorateWithTheme } from '../../scripts/theme.js';
+
 export default function decorate(block) {
+  // Load optional per-theme CSS for hero-teaser; no fallback applied
+  decorateWithTheme(block, 'hero-teaser', {});
   // Remove default button styling within hero-teaser
   block.querySelectorAll('a.button').forEach((a) => {
     a.classList.remove('button');

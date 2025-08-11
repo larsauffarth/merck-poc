@@ -25,90 +25,7 @@
   flex-direction: row;
 }
 
-/* --------------------------------------------------------------------------
-   Green Variant (Special styling for green theme)
-   -------------------------------------------------------------------------- */
-
-.hero-teaser.green {
-  clear: none !important;
-  background-color: #94b848;
-  margin: -120px auto 0;
-  padding-top: 200px;
-  padding-bottom: 50px;
-  overflow: hidden;
-  position: relative;
-  float: none !important;
-  border-bottom-right-radius: 60% 15%;
-  border-bottom-left-radius: 30px 30px;
-}
-
-/* Remove background from first two columns in green variant */
-.hero-teaser.green>div>div:not(:last-child) {
-  background: none;
-}
-
-/* Green variant - Last child image positioning */
-.hero-teaser.green>div>div:last-child img {
-  background: none;
-  width: 42%;
-  position: absolute;
-  top: -18%;
-  right: -10%;
-  padding: 0;
-}
-
-/* Green variant - Second column heading styles */
-.hero-teaser.green>div>div:nth-child(2)>h2>a {
-  color: white;
-  font-family: "MerckWeb";
-  font-size: 30px;
-  line-height: 130%;
-}
-
-/* Green variant - Second column text */
-.hero-teaser.green>div>div:nth-child(2)>p {
-  color: white;
-}
-
-/* Green variant - Call-to-action button */
-.hero-teaser.green>div>div:nth-child(2)>p:last-child {
-  box-sizing: border-box;
-  margin: 10px 0 0 0;
-  line-height: 1.5;
-  width: auto;
-  text-align: center;
-  display: inline-block;
-  font-family: Verdana, sans-serif;
-  min-height: 41px;
-  font-size: 18px;
-  position: relative;
-  padding: 7px 15px;
-  border-radius: 8px 0px 8px 8px;
-  text-decoration: none;
-  background: #ffffff;
-}
-
-/* Green variant - Button skewed edge effect */
-.hero-teaser.green>div>div:nth-child(2)>p:last-child::after {
-  content: "";
-  position: absolute;
-  width: 18px;
-  background: #ffffff;
-  min-height: 100%;
-  top: 0;
-  right: -6px;
-  transform: skewX(-10deg);
-  border-radius: 0 8px 8px 0;
-}
-
-/* Green variant - Button link styling */
-.hero-teaser.green>div>div:nth-child(2)>p:last-child>a {
-  color: #0f69af;
-  font-family: Verdana, sans-serif;
-  font-weight: bold;
-  font-size: 18px;
-  text-decoration: none;
-}
+/* Theme-specific variants moved to blocks/hero-teaser/theme/{theme}.hero-teaser.css */
 
 /* --------------------------------------------------------------------------
    News Variant (Similar to green but with different layout)
@@ -116,7 +33,6 @@
 
 .hero-teaser.news {
   clear: none !important;
-  background-color: #94b848;
   margin: -120px auto 0;
   padding-top: 200px;
   overflow: hidden;
@@ -141,7 +57,6 @@
 
 /* News variant - Second column heading styles */
 .hero-teaser.news>div>div:nth-child(2)>h1 {
-  color: white;
   text-transform: uppercase;
   font-family: "MerckWeb";
   font-size: 40px;
@@ -156,7 +71,6 @@
 
 /* News variant - Second column text */
 .hero-teaser.news>div>div:nth-child(2)>p {
-  color: white;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -194,19 +108,16 @@
 }
 
 .hero-teaser.news .news-anchor-link {
-  color: white;
   text-decoration: underline;
   font-size: 14px;
   font-weight: normal;
 }
 
 .hero-teaser.news .news-anchor-link:hover {
-  color: #ffffff;
   text-decoration: none;
 }
 
 .hero-teaser.news .news-link-separator {
-  color: white;
   font-size: 14px;
 }
 
@@ -270,7 +181,7 @@
 }
 
 /* Call-to-action button (default theme) */
-.hero-teaser>div>div:nth-child(2)>p:last-child {
+.hero-teaser:not(.news)>div>div:nth-child(2)>p:last-child {
   box-sizing: border-box;
   margin: 10px 0 0 0;
   line-height: 1.5;
@@ -288,12 +199,12 @@
 }
 
 /* Button link text color */
-.hero-teaser>div>div:nth-child(2)>p:last-child>a {
+.hero-teaser:not(.news)>div>div:nth-child(2)>p:last-child>a {
   color: #ffffff;
 }
 
 /* Button skewed edge effect */
-.hero-teaser>div>div:nth-child(2)>p:last-child::after {
+.hero-teaser:not(.news)>div>div:nth-child(2)>p:last-child::after {
   content: "";
   position: absolute;
   width: 18px;
@@ -400,19 +311,7 @@
     margin-top: 10px;
   }
 
-  /* Green variant adjustments for mobile */
-  .hero-teaser.green {
-    margin: -60px auto 0;
-    padding-top: 120px;
-    border-bottom-right-radius: 40% 10%;
-    border-bottom-left-radius: 20px 20px;
-  }
-
-  .hero-teaser.green>div>div:last-child img {
-    width: 30%;
-    top: -10%;
-    right: -5%;
-  }
+  /* Theme-specific green adjustments moved to theme CSS */
 
   /* News variant adjustments for mobile */
   .hero-teaser.news {
@@ -442,9 +341,7 @@
     font-size: 18px;
   }
 
-  .hero-teaser.green>div>div:nth-child(2)>h2>a {
-    font-size: 24px;
-  }
+  /* Theme-specific heading sizes for green moved to theme CSS */
 
   .hero-teaser.news>div>div:nth-child(2)>h1 {
     text-transform: uppercase;
@@ -463,8 +360,7 @@
   }
 
   /* Adjust button sizing for mobile */
-  .hero-teaser>div>div:nth-child(2)>p:last-child,
-  .hero-teaser.green>div>div:nth-child(2)>p:last-child {
+  .hero-teaser>div>div:nth-child(2)>p:last-child {
     font-size: 16px;
     padding: 10px 12px;
     margin: 15px 0 0 0;
@@ -505,9 +401,7 @@
     font-size: 16px;
   }
 
-  .hero-teaser.green>div>div:nth-child(2)>h2>a {
-    font-size: 20px;
-  }
+  /* Theme-specific heading sizes for green moved to theme CSS */
 
   .hero-teaser.news>div>div:nth-child(2)>h1 {
     font-size: 20px;
@@ -519,17 +413,14 @@
   }
 
   /* Make buttons more mobile-friendly */
-  .hero-teaser>div>div:nth-child(2)>p:last-child,
-  .hero-teaser.green>div>div:nth-child(2)>p:last-child {
+  .hero-teaser>div>div:nth-child(2)>p:last-child {
     font-size: 14px;
     padding: 8px 10px;
     margin: 10px 0 0 0;
   }
 
   /* Hide decorative image on very small screens to save space */
-  .hero-teaser.green>div>div:last-child img {
-    display: none;
-  }
+  /* Theme-specific image visibility for green moved to theme CSS */
 
   .hero-teaser.news>div>div:nth-child(3) img {
     display: none;

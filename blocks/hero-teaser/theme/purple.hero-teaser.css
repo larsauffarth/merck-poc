@@ -1,0 +1,118 @@
+/* Purple theme for hero-teaser block, aligned with purple header palette */
+
+.hero-teaser {
+  background-color: #503291; /* brand purple */
+  margin: -120px auto 0;
+  padding-top: 200px;
+  padding-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+  border-bottom-right-radius: 60% 15%;
+  border-bottom-left-radius: 30px 30px;
+}
+
+/* Remove backgrounds from first two columns to keep content clean over purple */
+.hero-teaser>div>div:nth-child(1),
+.hero-teaser>div>div:nth-child(2) {
+  background: none;
+}
+
+/* Headline and paragraph colors on purple */
+.hero-teaser>div>div:nth-child(2)>h2>a,
+.hero-teaser>div>div:nth-child(2)>p {
+  color: #ffffff;
+}
+
+/* CTA button on purple: cyan accent, hover to deeper purple */
+.hero-teaser:not(.news)>div>div:nth-child(2)>p:last-child {
+  background: #2dbecd; /* accent */
+}
+
+.hero-teaser:not(.news)>div>div:nth-child(2)>p:last-child>a {
+  color: #0a0a0a; /* readable over cyan */
+}
+
+.hero-teaser:not(.news)>div>div:nth-child(2)>p:last-child::after {
+  background: #2dbecd; /* match button */
+}
+
+.hero-teaser:not(.news)>div>div:nth-child(2)>p:last-child:hover {
+  background: #4c1d95; /* hover like header dropdown */
+}
+
+.hero-teaser:not(.news)>div>div:nth-child(2)>p:last-child:hover a {
+  color: #ffffff;
+}
+
+/* Right image position similar to green variant for consistency */
+.hero-teaser>div>div:last-child img {
+  background: none;
+  width: 42%;
+  position: absolute;
+  top: -18%;
+  right: -10%;
+  padding: 0;
+}
+
+/* News variant on purple: white text links */
+.hero-teaser.news>div>div:nth-child(2)>h1,
+.hero-teaser.news>div>div:nth-child(2)>p {
+  color: #ffffff;
+}
+
+/* Ensure anchor links remain white across states */
+.hero-teaser.news .news-anchor-link,
+.hero-teaser.news .news-anchor-link:visited {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.hero-teaser.news .news-link-separator {
+  color: #ffffff;
+}
+
+/* Increase specificity to override base CTA link rule for news links */
+.hero-teaser.news > div > div:nth-child(2) > p.news-anchor-links a.news-anchor-link,
+.hero-teaser.news > div > div:nth-child(2) > p.news-anchor-links a.news-anchor-link:visited {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: normal;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.hero-teaser.news > div > div:nth-child(2) > p.news-anchor-links a.news-anchor-link:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* News variant uses reduced top padding compared to base */
+.hero-teaser.news {
+  padding-top: 120px;
+}
+
+.hero-teaser.news .news-anchor-link:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .hero-teaser {
+    margin: -60px auto 0;
+    padding-top: 120px;
+    border-bottom-right-radius: 40% 10%;
+    border-bottom-left-radius: 20px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-teaser {
+    margin: -40px auto 0;
+    padding-top: 60px;
+  }
+  .hero-teaser>div>div:last-child img {
+    display: none;
+  }
+}
+
+
