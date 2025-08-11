@@ -78,6 +78,11 @@ export function decorateMain(main) {
 async function loadEager(doc) {
     document.documentElement.lang = 'en';
     decorateTemplateAndTheme();
+    // Load page theme CSS early to avoid FOUC
+    const theme = getMetadata('theme');
+    if (theme) {
+        await loadCSS(`${window.hlx.codeBasePath}/styles/theme/${theme}.css`);
+    }
     const main = doc.querySelector('main');
     if (main) {
         decorateMain(main);
@@ -121,11 +126,7 @@ async function loadLazy(doc) {
     loadSidebar(doc.querySelector('main'));
     loadFooter(doc.querySelector('footer'));
 
-    // Multi-Site Theming
-    const theme = getMetadata('theme');
-    if (theme) {
-        loadCSS(`${window.hlx.codeBasePath}/styles/theme/${theme}.css`);
-    }
+    // Theme CSS already loaded during eager phase
 
     sampleRUM('lazy');
 }

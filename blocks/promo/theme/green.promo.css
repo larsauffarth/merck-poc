@@ -1,0 +1,28 @@
+/* Green theme for Promo block (extracted from base promo.css) */
+
+.promo {
+  background-color: var(--brand-green);
+  color: #ffffff;
+}
+
+.promo>div>div:first-child>h2 {
+  color: #ffffff;
+}
+
+.promo>div>div:first-child>p:first-of-type {
+  color: #ffffff;
+}
+
+/* CTA button styling (green theme) */
+.promo>div>div:first-child>p:last-child a {
+  background-color: #0f69af;
+  color: #ffffff;
+}
+
+.promo>div>div:first-child>p:last-child a:hover {
+  background-color: #0d5a94;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+

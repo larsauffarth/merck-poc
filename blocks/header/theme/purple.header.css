@@ -1,0 +1,134 @@
+/* Purple theme header overrides migrated from header.css */
+
+.header {
+  --background-color: #503291;
+}
+
+.header .section.nav-brand {
+  background: #503291;
+}
+
+.header .section.nav-sections {
+  background-color: #503291;
+}
+
+.header .section.nav-sections ul {
+  background-color: #503291;
+}
+
+.header .section.nav-sections li {
+  background-color: #503291;
+}
+
+/* Ensure header text and links are white on purple */
+.header nav {
+  color: #ffffff;
+}
+
+.header .section.nav-sections li,
+.header .section.nav-sections a {
+  color: #ffffff;
+}
+
+/* Dropdown/submenu styling for purple theme */
+.header .section.nav-sections .default-content-wrapper>ul>li[aria-expanded='true']>ul {
+  background-color: #503291 !important;
+}
+
+.header .section.nav-sections .default-content-wrapper>ul>li>ul::before {
+  border-bottom-color: #503291 !important;
+}
+
+.header .section.nav-sections .default-content-wrapper>ul>li>ul>li {
+  background-color: #503291;
+}
+
+.header .section.nav-sections .default-content-wrapper>ul>li>ul>li:hover,
+.header .section.nav-sections .default-content-wrapper>ul>li>ul>li:hover a {
+  color: #2dbecd;
+  text-decoration: none;
+  background-color: #4c1d95;
+}
+
+/* Desktop dropdown links: restore previous purple dropdown color scheme */
+@media (width >=900px) {
+  .header .section.nav-sections .default-content-wrapper>ul>li>ul>li a {
+    color: #ffffff !important;
+    display: block;
+    padding: 8px 16px;
+  }
+
+  .header .section.nav-sections .default-content-wrapper>ul>li>ul>li:hover a,
+  .header .section.nav-sections .default-content-wrapper>ul>li>ul>li:focus-within a {
+    color: #2dbecd !important;
+    background-color: #4c1d95;
+    text-decoration: none;
+  }
+}
+
+/* Remove border-radius and gaps for purple theme */
+.header .nav-brand {
+  border-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.header .section.nav-sections {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.header nav {
+  gap: 0;
+}
+
+@media (width >=900px) {
+  .header nav {
+    gap: 0;
+    justify-content: flex-start;
+    /* Align header content with body: 32px + 1216px + 32px */
+    max-width: 1280px;
+    padding: 0 32px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  .header .nav-sections {
+    flex-grow: 1;
+  }
+
+  .header .section.nav-sections {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* Purple theme: brand takes 15% and aligns left */
+  .header .section.nav-brand {
+    flex: 0 0 15%;
+    justify-content: flex-start;
+    text-align: left;
+    height: var(--nav-height);
+  }
+
+  /* Purple theme: normalize section heights and remove extra padding that increases total height */
+  .header .section.nav-sections {
+    height: var(--nav-height);
+    padding: 0 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+
+/* Match previous purple header shape (no rounded left corners or extra left padding) */
+.header .section.nav-sections {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 0;
+}
+}
+
+/* Make purple header background span full width */
+.header .nav-wrapper {
+  background-color: #503291;
+}
+
+

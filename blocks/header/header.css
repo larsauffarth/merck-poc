@@ -296,181 +296,27 @@ header nav .nav-tools {
 }
 
 
-/* ==========================================================================
+/* ========================================================================== 
    MERCK LOGO
    ========================================================================== */
 
 .section.nav-brand {
-  background: #a5cd50;
   flex-basis: 25%;
   height: 72px;
 }
 
 @media (width >=900px) {
   .header nav {
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 0;
   }
 }
 
-/* Desktop: keep a 12px gap only between brand and sections on green header */
-@media (width >=900px) {
-  .header:not(.header-purple-theme) nav {
-    justify-content: flex-start;
-  }
-
-  .header:not(.header-purple-theme) .section.nav-brand {
-    margin-right: 12px;
-  }
-}
+/* Green theme will add the 12px gap; removed from base to avoid affecting other themes */
 
 .section.nav-sections {
-  border-top-left-radius: 4em 15em;
-  border-bottom-left-radius: 20em 20em;
-  padding: 27px 0px 27px 72px;
-  background-color: #a5cd50;
   height: 72px;
   box-sizing: border-box;
 }
 
-.section.nav-sections li, 
-.section.nav-sections a {
-  color: #FFFFFF;
-}
-
-.section.nav-sections ul {
-  margin: 0;
-  padding: 0;
-  background-color: #a5cd50;
-}
-
-.section.nav-sections li {
-  font-size: 14px;
-  list-style: none;
-  box-sizing: border-box;
-  font-family: Verdana, sans-serif;
-  background-color: #a5cd50;
-  margin: 0;
-  padding: 0;
-}
-
-/* Dropdown/submenu styling */
-.section.nav-sections .default-content-wrapper>ul>li[aria-expanded='true']>ul {
-  background-color: #a5cd50 !important;
-  padding: 0 !important;
-}
-
-.section.nav-sections .default-content-wrapper>ul>li>ul::before {
-  border-bottom-color: #a5cd50 !important;
-}
-
-.section.nav-sections .default-content-wrapper>ul>li>ul>li {
-  background-color: #a5cd50;
-  color: #FFFFFF;
-  padding: 8px 16px;
-}
-
-.section.nav-sections .default-content-wrapper>ul>li>ul>li:hover,
-.section.nav-sections .default-content-wrapper>ul>li>ul>li:hover a {
-  color: #2dbecd;
-  text-decoration: none;
-  background-color: #104e70;
-}
-
-/* ==========================================================================
-   PURPLE THEME HEADER
-   ========================================================================== */
-
-.header-purple-theme .section.nav-brand {
-  background: #503291; /* Purple background */
-}
-
-.header-purple-theme .section.nav-sections {
-  background-color: #503291; /* Purple background */
-}
-
-.header-purple-theme .section.nav-sections ul {
-  background-color: #503291;
-}
-
-.header-purple-theme .section.nav-sections li {
-  background-color: #503291;
-}
-
-/* Dropdown/submenu styling for purple theme */
-.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li[aria-expanded='true']>ul {
-  background-color: #503291 !important;
-}
-
-.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li>ul::before {
-  border-bottom-color: #503291 !important;
-}
-
-.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li>ul>li {
-  background-color: #503291;
-}
-
-.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li>ul>li:hover,
-.header-purple-theme .section.nav-sections .default-content-wrapper>ul>li>ul>li:hover a {
-  color: #2dbecd;
-  text-decoration: none;
-  background-color: #4c1d95; /* Darker purple for hover */
-}
-
-/* Remove border-radius and gaps for purple theme */
-.header-purple-theme .nav-brand {
-  border-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.header-purple-theme .section.nav-sections {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.header.header-purple-theme nav {
-  gap: 0;
-}
-
-@media (width >=900px) {
-  .header.header-purple-theme nav {
-    gap: 0;
-    justify-content: flex-start;
-    /* Align header content with body: 32px + 1216px + 32px */
-    max-width: 1280px;
-    padding: 0 32px;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
-  
-  .header.header-purple-theme .nav-sections {
-    flex-grow: 1;
-  }
-
-  .header.header-purple-theme .section.nav-sections {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-
-  /* Purple theme: brand takes 15% and aligns left */
-  .header.header-purple-theme .section.nav-brand {
-    flex: 0 0 15%;
-    justify-content: flex-start;
-    text-align: left;
-    height: var(--nav-height);
-  }
-
-  /* Purple theme: normalize section heights and remove extra padding that increases total height */
-  .header.header-purple-theme .section.nav-sections {
-    height: var(--nav-height);
-    padding: 0 16px; /* remove vertical padding; keep small horizontal breathing room */
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-  }
-}
-
-/* Make purple header background span full width */
-.header.header-purple-theme .nav-wrapper {
-  background-color: #503291;
-}
+/* Purple theme overrides moved to blocks/header/theme/purple.header.css */

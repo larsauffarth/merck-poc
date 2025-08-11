@@ -1,0 +1,67 @@
+/* Green theme header overrides extracted from styles/theme/green.css */
+
+/* Scope background variable to header only to avoid site-wide bleed */
+.header {
+  --background-color: var(--brand-green);
+}
+
+/* Header (green theme) */
+.header .section.nav-brand {
+  background: var(--brand-green);
+}
+
+.header .section.nav-sections,
+.header .section.nav-sections ul,
+.header .section.nav-sections li {
+  background-color: var(--brand-green);
+}
+
+.header .section.nav-sections li,
+.header .section.nav-sections a {
+  color: #ffffff;
+}
+
+.header .section.nav-sections .default-content-wrapper>ul>li[aria-expanded='true']>ul {
+  background-color: var(--brand-green) !important;
+  padding: 0 !important;
+}
+
+.header .section.nav-sections .default-content-wrapper>ul>li>ul::before {
+  border-bottom-color: var(--brand-green) !important;
+}
+
+.header .section.nav-sections .default-content-wrapper>ul>li>ul>li {
+  background-color: var(--brand-green);
+  color: #ffffff;
+  padding: 8px 16px;
+}
+
+.header .section.nav-sections .default-content-wrapper>ul>li>ul>li:hover {
+  background-color: #3067aa; /* whole list item hover background */
+}
+
+.header .section.nav-sections .default-content-wrapper>ul>li>ul>li:hover a {
+  color: #ffffff; /* keep text white when the entire item is hovered */
+  text-decoration: none;
+}
+
+/* Only when the link itself is hovered, apply the hover color */
+.header .section.nav-sections .default-content-wrapper>ul>li>ul>li a:hover {
+  color: #2dbecd; /* link text hover color */
+  text-decoration: none;
+}
+
+/* Shape and spacing to match previous green header behavior */
+.header .section.nav-sections {
+  border-top-left-radius: 4em 15em;
+  border-bottom-left-radius: 20em 20em;
+  padding: 27px 0 27px 72px;
+}
+
+@media (width >=900px) {
+  .header .section.nav-brand {
+    margin-right: 12px;
+  }
+}
+
+

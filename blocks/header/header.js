@@ -1,4 +1,5 @@
 import { getMetadata } from '../../scripts/aem.js';
+import { decorateWithTheme, loadThemeBlockCSS } from '../../scripts/theme.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 // media query match that indicates mobile/tablet width
@@ -108,16 +109,19 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  // Load optional per-theme header CSS and decorators (if provided)
+  decorateWithTheme(block, 'header', {});
+  // Fallback: if no theme metadata present, default header to purple styling
+  const pageTheme = getMetadata('theme');
+  if (!pageTheme) {
+    loadThemeBlockCSS('purple', 'header');
+  }
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
-  // Get theme metadata and apply theme class to header
-  const theme = getMetadata('theme');
-  if (theme !== 'green') {
-    block.classList.add('header-purple-theme');
-  }
+  // Theme class toggle removed; per-theme CSS is loaded via decorateWithTheme
 
   // decorate nav DOM
   block.textContent = '';

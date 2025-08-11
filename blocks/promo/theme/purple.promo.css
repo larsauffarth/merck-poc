@@ -1,0 +1,26 @@
+/* Purple theme for Promo block */
+
+/* Base background follows purple header (#503291) */
+.promo {
+  background-color: #503291;
+  color: #ffffff;
+}
+
+.promo>div>div:first-child>h2,
+.promo>div>div:first-child>p:first-of-type {
+  color: #ffffff;
+}
+
+/* CTA button: use accent from header hover/link color (#2dbecd) */
+.promo>div>div:first-child>p:last-child a {
+  background-color: #2dbecd;
+  color: #0a0a0a; /* readable on cyan accent */
+}
+
+.promo>div>div:first-child>p:last-child a:hover {
+  background-color: #4c1d95; /* match purple hover bg used in header dropdown */
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
